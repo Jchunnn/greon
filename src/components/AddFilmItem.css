@@ -1,20 +1,20 @@
-.collect-film-item-text {
+/* .add-film-item-text {
   text-align: start;
 }
 
-.collect-film-item-30 {
+.add-film-item-30 {
   width: 30%;
 }
 
-.collect-film-item-70 {
+.add-film-item-70 {
   width: 70%;
 }
 
-.collect-film-item-title {
+.add-film-item-title {
   font-size: 16px;
 }
 
-.collect-film-item-subtitle {
+.add-film-item-subtitle {
   font-size: 12px;
 }
 
@@ -24,11 +24,11 @@
 }
 
 @media (min-width: 1194px) {
-  .collect-film-item-title {
+  .add-film-item-title {
     font-size: 32px;
   }
 
-  .collect-film-item-subtitle {
+  .add-film-item-subtitle {
     font-size: 24px;
   }
 
@@ -37,3 +37,4 @@
     height: 48px;
   }
 }
+ */

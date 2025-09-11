@@ -1,11 +1,11 @@
 import collect from "../assets/images/icons/collect.svg";
 import collectWhite from "../assets/images/icons/collect-white.svg";
 
-import "./CollectFilmItem.css";
+import "./AddFilmItem.css";
 import Button from "../ui/Button";
 
-function CollectFilmItem({ film, onToggleCollect }) {
-  const { id, img, alt, title, episode, isCollected } = film;
+function AddFilmItem({ film, onToggleAdd }) {
+  const { id, img, alt, title, videoType, episode, isAdded } = film;
 
   return (
     <div>
@@ -21,13 +21,13 @@ function CollectFilmItem({ film, onToggleCollect }) {
                   {title}
                 </h4>
                 <p className="collect-film-item-subtitle text-neutral-200">
-                  特輯 • 已完結 / 共 {episode} 集
+                  {videoType} • 已完結 / 共 {episode} 集
                 </p>
               </div>
-              <Button onClick={() => onToggleCollect(id)}>
+              <Button onClick={() => onToggleAdd(id)}>
                 <img
-                  src={isCollected ? collectWhite : collect}
-                  alt={isCollected ? "collectWhite" : "collect"}
+                  src={isAdded ? collectWhite : collect}
+                  alt={isAdded ? "collectWhite" : "collect"}
                   className="collect-icon"
                 />
               </Button>
@@ -39,4 +39,4 @@ function CollectFilmItem({ film, onToggleCollect }) {
   );
 }
 
-export default CollectFilmItem;
+export default AddFilmItem;
