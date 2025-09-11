@@ -1,4 +1,4 @@
-.icon-sm {
+.add-film-icon-sm {
   width: 24px;
   height: 24px;
 }
@@ -45,6 +45,7 @@
 .green-border {
   border: 1px solid var(--success-200);
   border-radius: 8px;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .film-md-width {

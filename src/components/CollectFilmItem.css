@@ -22,7 +22,10 @@
   width: 24px;
   height: 24px;
 }
-
+.collect-film-list-icon-sm {
+  width: 24px;
+  height: 24px;
+}
 @media (min-width: 1194px) {
   .collect-film-item-title {
     font-size: 32px;

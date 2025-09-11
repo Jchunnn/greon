@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import arrowLeft from "../assets/images/icons/arrow-left.svg";
 import search from "../assets/images/icons/search.svg";
 import VideoThumbnail1 from "../assets/images/Personal_Page_Search_Default/VideoThumbnail_1.svg";
@@ -8,6 +8,7 @@ import VideoThumbnail4 from "../assets/images/Personal_Page_Search_Default/Video
 import VideoThumbnail5 from "../assets/images/Personal_Page_Search_Default/VideoThumbnail_5.svg";
 import VideoThumbnail6 from "../assets/images/Personal_Page_Search_Default/VideoThumbnail_6.svg";
 import VideoThumbnail7 from "../assets/images/Personal_Page_Search_Default/VideoThumbnail_7.svg";
+import checkcircle from "../assets/images/icons/checkcircle.svg";
 
 import AddFilmItem from "../components/AddFilmItem";
 
@@ -81,6 +82,7 @@ const initialFilms = [
 
 function AddFilm() {
   const [addFilm, setAddFilm] = useState(initialFilms);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleToggleAdd = (id) => {
     setAddFilm((prevFilms) =>
@@ -88,7 +90,17 @@ function AddFilm() {
         film.id === id ? { ...film, isAdded: !film.isAdded } : film
       )
     );
+    setShowMessage(true);
   };
+
+  // 當 showMessage 變成 true 時，3秒後自動關閉
+  useEffect(() => {
+    if (!showMessage) return;
+
+    const timer = setTimeout(() => setShowMessage(false), 2000);
+
+    return () => clearTimeout(timer); // 清除上一次的定時器
+  }, [showMessage]);
 
   return (
     <>
@@ -126,6 +138,19 @@ function AddFilm() {
             />
           ))}
         </ul>
+
+        {showMessage && (
+          <div className="flex justify-center items-center green-border py-m">
+            <div className="mr-xxs">
+              <img
+                src={checkcircle}
+                alt="checkkcircle"
+                className="add-film-icon-sm"
+              />
+            </div>
+            <p className="text-m text-neutral-100">已新增影片至清單</p>
+          </div>
+        )}
       </div>
     </>
   );

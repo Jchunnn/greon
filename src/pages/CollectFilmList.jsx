@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import arrowLeft from "../assets/images/icons/arrow-left.svg";
 import search from "../assets/images/icons/search.svg";
 import collect1 from "../assets/images/Personal_Page_Search_Result/VideoThumbnail-1.svg";
@@ -8,6 +8,7 @@ import collect4 from "../assets/images/Personal_Page_Search_Result/VideoThumbnai
 import collect5 from "../assets/images/Personal_Page_Search_Result/VideoThumbnail-5.svg";
 import collect6 from "../assets/images/Personal_Page_Search_Result/VideoThumbnail-6.svg";
 import collect7 from "../assets/images/Personal_Page_Search_Result/VideoThumbnail-7.svg";
+import checkcircle from "../assets/images/icons/checkcircle.svg";
 
 import CollectFilmItem from "../components/CollectFilmItem";
 
@@ -74,6 +75,7 @@ const initialFilms = [
 
 function CollectFilmList() {
   const [collectFilm, setCollectFilm] = useState(initialFilms);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleToggleCollect = (id) => {
     setCollectFilm((prevFilms) =>
@@ -81,7 +83,17 @@ function CollectFilmList() {
         film.id === id ? { ...film, isCollected: !film.isCollected } : film
       )
     );
+    setShowMessage(true);
   };
+
+  // 當 showMessage 變成 true 時，3秒後自動關閉
+  useEffect(() => {
+    if (!showMessage) return;
+
+    const timer = setTimeout(() => setShowMessage(false), 2000);
+
+    return () => clearTimeout(timer); // 清除上一次的定時器
+  }, [showMessage]);
 
   return (
     <>
@@ -118,6 +130,18 @@ function CollectFilmList() {
             />
           ))}
         </ul>
+        {showMessage && (
+          <div className="flex justify-center items-center green-border py-m">
+            <div className="mr-xxs">
+              <img
+                src={checkcircle}
+                alt="checkkcircle"
+                className="collect-film-list-icon-sm"
+              />
+            </div>
+            <p className="text-m text-neutral-100">已新增影片至清單</p>
+          </div>
+        )}
       </div>
     </>
   );
