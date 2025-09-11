@@ -79,11 +79,16 @@ function CollectFilmList() {
 
   const handleToggleCollect = (id) => {
     setCollectFilm((prevFilms) =>
-      prevFilms.map((film) =>
-        film.id === id ? { ...film, isCollected: !film.isCollected } : film
-      )
+      prevFilms.map((film) => {
+        if (film.id === id) {
+          if (!film.isCollected) {
+            setShowMessage(true);
+          }
+          return { ...film, isCollected: !film.isCollected };
+        }
+        return film;
+      })
     );
-    setShowMessage(true);
   };
 
   // 當 showMessage 變成 true 時，3秒後自動關閉

@@ -86,11 +86,16 @@ function AddFilm() {
 
   const handleToggleAdd = (id) => {
     setAddFilm((prevFilms) =>
-      prevFilms.map((film) =>
-        film.id === id ? { ...film, isAdded: !film.isAdded } : film
-      )
+      prevFilms.map((film) => {
+        if (film.id === id) {
+          if (!film.isAdded) {
+            setShowMessage(true);
+          }
+          return { ...film, isAdded: !film.isAdded };
+        }
+        return film;
+      })
     );
-    setShowMessage(true);
   };
 
   // 當 showMessage 變成 true 時，3秒後自動關閉
