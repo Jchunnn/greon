@@ -463,67 +463,6 @@ img {
   color: var(--neutral-1000);
 }
 
-/* Headings */
-.text-h1 {
-  font-size: var(--font-size-h1);
-}
-.text-h2 {
-  font-size: var(--font-size-h2);
-}
-.text-h3 {
-  font-size: var(--font-size-h3);
-}
-.text-h4 {
-  font-size: var(--font-size-h4);
-}
-.text-h5 {
-  font-size: var(--font-size-h5);
-}
-.text-h6 {
-  font-size: var(--font-size-h6);
-}
-
-@media (min-width: 768px) {
-  .text-md-h1 {
-    font-size: var(--font-size-h1);
-  }
-  .text-md-h2 {
-    font-size: var(--font-size-h2);
-  }
-  .text-md-h3 {
-    font-size: var(--font-size-h3);
-  }
-  .text-md-h4 {
-    font-size: var(--font-size-h4);
-  }
-  .text-md-h5 {
-    font-size: var(--font-size-h5);
-  }
-  .text-md-h6 {
-    font-size: var(--font-size-h6);
-  }
-}
-@media (min-width: 1194px) {
-  .text-lg-h1 {
-    font-size: var(--font-size-h1);
-  }
-  .text-lg-h2 {
-    font-size: var(--font-size-h2);
-  }
-  .text-lg-h3 {
-    font-size: var(--font-size-h3);
-  }
-  .text-lg-h4 {
-    font-size: var(--font-size-h4);
-  }
-  .text-lg-h5 {
-    font-size: var(--font-size-h5);
-  }
-  .text-lg-h6 {
-    font-size: var(--font-size-h6);
-  }
-}
-
 /* Text */
 .text-xl {
   font-size: var(--font-size-xl);
@@ -582,6 +521,67 @@ img {
   }
   .text-lg-xxs {
     font-size: var(--font-size-xxs);
+  }
+}
+
+/* Headings */
+.text-h1 {
+  font-size: var(--font-size-h1);
+}
+.text-h2 {
+  font-size: var(--font-size-h2);
+}
+.text-h3 {
+  font-size: var(--font-size-h3);
+}
+.text-h4 {
+  font-size: var(--font-size-h4);
+}
+.text-h5 {
+  font-size: var(--font-size-h5);
+}
+.text-h6 {
+  font-size: var(--font-size-h6);
+}
+
+@media (min-width: 768px) {
+  .text-md-h1 {
+    font-size: var(--font-size-h1);
+  }
+  .text-md-h2 {
+    font-size: var(--font-size-h2);
+  }
+  .text-md-h3 {
+    font-size: var(--font-size-h3);
+  }
+  .text-md-h4 {
+    font-size: var(--font-size-h4);
+  }
+  .text-md-h5 {
+    font-size: var(--font-size-h5);
+  }
+  .text-md-h6 {
+    font-size: var(--font-size-h6);
+  }
+}
+@media (min-width: 1194px) {
+  .text-lg-h1 {
+    font-size: var(--font-size-h1);
+  }
+  .text-lg-h2 {
+    font-size: var(--font-size-h2);
+  }
+  .text-lg-h3 {
+    font-size: var(--font-size-h3);
+  }
+  .text-lg-h4 {
+    font-size: var(--font-size-h4);
+  }
+  .text-lg-h5 {
+    font-size: var(--font-size-h5);
+  }
+  .text-lg-h6 {
+    font-size: var(--font-size-h6);
   }
 }
 
@@ -3443,6 +3443,14 @@ img {
 
 .border-radius-1000 {
   border-radius: 1000px;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 /* 只要有用到 AppHeader的頁面，都須 margin-top: App-header高度 */

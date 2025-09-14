@@ -13,6 +13,7 @@ import checkcircle from "../assets/images/icons/checkcircle.svg";
 import CollectFilmItem from "../components/CollectFilmItem";
 
 import "./CollectFilmList.css";
+import Button from "../ui/Button";
 
 const initialFilms = [
   {
@@ -104,12 +105,12 @@ function CollectFilmList() {
     <>
       <div className="text-h6 text-info-500 text-center mt-app-header px-16px">
         <div className="flex pt-30px pb-16px ">
-          <button
-            className="flex items-center mr-s back-btn"
-            to="/app/favorite"
+          <Button
+            otherClass="flex items-center mr-s back-btn"
+            to="/app/account/favorite"
           >
             <img src={arrowLeft} alt="arrow left" />
-          </button>
+          </Button>
           <div className="search-bar">
             <div className="search-input-wrapper flex">
               <img src={search} alt="search" className="icon-sm" />

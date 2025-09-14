@@ -155,11 +155,13 @@ function AppHome() {
           <ul className="flex gap-xs gap-lg-s overflow-x-auto scroll-container">
             {top10FilmList.map((film) => (
               <li key={film.rank}>
-                <img
-                  src={film.img}
-                  alt={film.alt}
-                  className="app-home-rank-film"
-                />
+                <Button to="/film">
+                  <img
+                    src={film.img}
+                    alt={film.alt}
+                    className="app-home-rank-film"
+                  />
+                </Button>
               </li>
             ))}
           </ul>
@@ -217,11 +219,13 @@ function AppHome() {
             {recommandList.map((recommand) => (
               <li key={recommand.alt}>
                 <div className="relative mb-xs">
-                  <img
-                    src={recommand.img}
-                    alt={recommand.alt}
-                    className="app-home-recommand-img"
-                  />
+                  <Button to="/film">
+                    <img
+                      src={recommand.img}
+                      alt={recommand.alt}
+                      className="app-home-recommand-img"
+                    />
+                  </Button>
                   <div className="absolute app-home-play-icon-2 app-home-play-icon-position-right-bottom">
                     <Button to="/app/usage-tutorial">
                       <img src={play} alt="play" />
@@ -261,11 +265,9 @@ function AppHome() {
                   key={category.category}
                   className="col-2 col-md-2 col-lg-3 mb-xs mb-lg-2xl"
                 >
-                  <img
-                    src={category.img}
-                    alt={category.alt}
-                    className="mb-xs"
-                  />
+                  <Button to="/film" otherClass="w-full mb-xs">
+                    <img src={category.img} alt={category.alt} />
+                  </Button>
                   <p className="text-neutral-0 text-s text-lg-xl">
                     {category.category}
                   </p>

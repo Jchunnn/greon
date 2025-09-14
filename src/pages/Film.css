@@ -72,6 +72,136 @@
   height: 5px;
 }
 
+.add-film-to-playliat-modal {
+  width: 312px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  color: var(--neutral-100);
+  background-color: var(--neutral-800);
+  box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+  padding: var(--spacing-xs);
+  transition: all 0.5s;
+}
+
+.add-film-to-playliat-close-btn-position {
+  top: var(--spacing-xxs);
+  right: var(--spacing-xxs);
+}
+
+/* 外層的 <label> */
+.add-film-to-playliat-custom-checkbox {
+  position: relative;
+  padding-left: 26px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 隱藏原生 checkbox */
+.add-film-to-playliat-custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* 自訂 checkbox 外觀 */
+.add-film-to-playliat-custom-checkbox .checkmark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: transparent; /* ✅ 透明背景，讓黑底透出 */
+  border: 2px solid white; /* ✅ 白框 */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* 勾選時改成白底 */
+.add-film-to-playliat-custom-checkbox input:checked + .checkmark {
+  background-color: white; /* ✅ 勾選後白底 */
+}
+
+/* 勾選時的打勾符號 */
+.add-film-to-playliat-custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid black; /* ✅ 黑色打勾符號 */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.add-film-to-playliat-text-input-field {
+  width: 100%;
+  padding-top: var(--spacing-l);
+  padding-bottom: var(--spacing-xs);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--neutral-100);
+  color: var(--neutral-0);
+  font-size: var(--spacing-m);
+  outline: none;
+  transition: border-bottom 0.3s ease;
+}
+
+.add-film-to-playliat-text-input-field:focus {
+  border-bottom: 1px solid var(--success-200);
+}
+
+.add-film-to-playliat-text-input-label {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: var(--neutral-0);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.1s ease;
+  transform-origin: left top;
+}
+
+.add-film-to-playliat-text-input-field:focus
+  + .add-film-to-playliat-text-input-label,
+.add-film-to-playliat-text-input-field:not(:placeholder-shown)
+  + .add-film-to-playliat-text-input-label {
+  top: 0;
+  font-size: 0.75rem;
+  color: var(--neutral-200);
+  transform: translateY(-0.25rem);
+}
+
+.success-msg-modal-position {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.success-msg-modal {
+  width: 328px;
+  background: var(--neutral-800);
+  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(18, 18, 18, 0.1);
+  border: 2px solid #2e7d32;
+  padding-block: 24px;
+  padding-inline: 16px;
+  border-radius: 16px;
+}
+
+.success-msg-modal-checkcircle-icon {
+  width: 24px;
+  height: 24px;
+}
+
 @media (min-width: 768px) {
   .film-play-time {
     left: 12px;

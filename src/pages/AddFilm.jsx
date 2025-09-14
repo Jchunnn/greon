@@ -13,6 +13,7 @@ import checkcircle from "../assets/images/icons/checkcircle.svg";
 import AddFilmItem from "../components/AddFilmItem";
 
 import "./AddFilm.css";
+import Button from "../ui/Button";
 
 const initialFilms = [
   {
@@ -111,17 +112,17 @@ function AddFilm() {
     <>
       <div className="text-h6 text-info-500 text-center mt-app-header px-16px">
         <div className="flex pt-30px pb-16px ">
-          <button
-            className="flex items-center mr-s back-btn"
-            to="/app/favorite"
+          <Button
+            to="/app/account/favorite"
+            otherClass="flex items-center mr-s back-btn"
           >
             <img src={arrowLeft} alt="arrow left" />
-          </button>
+          </Button>
           <div className="search-bar">
             <div className="search-input-wrapper flex">
-              <button className="back-btn">
-                <img src={search} alt="search" className="icon-sm " />
-              </button>
+              <Button to="/app/account/collect-film-list" otherClass="back-btn">
+                <img src={search} alt="search" className="icon-sm" />
+              </Button>
               <input
                 type="text"
                 placeholder="搜尋"

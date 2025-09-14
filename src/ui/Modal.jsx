@@ -51,8 +51,8 @@ function Window({
       <Overlay overlayCustomClass={overlayCustomClass}>
         <StyledModal ref={ref} styledModalCustomClass={styledModalCustomClass}>
           {needCloseBtn && (
-            <Button onClick={close}>
-              <span className="material-symbols-rounded absolute close-btn-position text-neural-100">
+            <Button onClick={close} otherClass="absolute close-btn-position">
+              <span className="material-symbols-rounded text-neutral-100">
                 close
               </span>
             </Button>
@@ -64,7 +64,7 @@ function Window({
       <StyledModal ref={ref} styledModalCustomClass={styledModalCustomClass}>
         {needCloseBtn && (
           <Button onClick={close}>
-            <span className="material-symbols-rounded absolute close-btn-position text-neural-100">
+            <span className="material-symbols-rounded absolute close-btn-position text-neutral-100">
               close
             </span>
           </Button>

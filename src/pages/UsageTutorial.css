@@ -1,22 +1,461 @@
+.usage-tutorial-width-height {
+  height: calc(100vh - 112px);
+}
+
+.usage-tutorial-overlay {
+  position: absolute;
+  background: #12121280;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin-block: -56px;
+  z-index: 2;
+}
+
 .fullscreen-img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(90deg); /* 先置中，再旋轉 */
   transform-origin: center center;
-  width: 100vh; /* 旋轉後的寬高要對調 */
+  width: calc(100vh - 112px); /* 旋轉後的寬高要對調 */
   height: 100vw;
   object-fit: cover;
   object-position: center;
   display: block;
 }
 
+.usage-tutorial-title {
+  position: absolute;
+  transform: rotate(90deg);
+  top: 100px;
+  right: -75px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  width: 200px; /*無論文字多寡，設定固定寬度200，方便手機版定位*/
+  white-space: nowrap; /* 文字無論多寡都不斷行 */
+}
+
+.usage-tutorial-video-control-icon {
+  position: absolute;
+  width: 384px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg); /* 先置中，再旋轉 */
+}
+
+.usage-tutorial-player-bar {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translate(-50%, -50%) rotate(90deg);
+  transform-origin: center center;
+  width: calc(100vh - 112px);
+  height: 100vw;
+}
+
+.usage-tutorial-arrow-left {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: -24px;
+  right: 12px;
+  transform: rotate(90deg);
+}
+
+.usage-tutorial-unlock,
+.usage-tutorial-lock {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -24px;
+  right: 12px;
+  transform: rotate(90deg);
+}
+
+.usage-tutorial-arrow-right {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.usage-tutorial-dash-circle-with-green-triangle {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  top: 25%;
+  left: 25px;
+  transform: rotate(90deg);
+  z-index: 3;
+}
+
+.usage-tutorial-green-triangle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 25%;
+  left: 35px;
+  transform: rotate(90deg);
+  z-index: 3;
+}
+
+.usage-tutorial-text-box-1-position {
+  position: absolute;
+  top: 30%;
+  left: 60px;
+  transform: rotate(90deg);
+  z-index: 3;
+}
+
+.usage-tutorial-text-box-2-position {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  z-index: 3;
+}
+
+.usage-tutorial-text-box-1,
+.usage-tutorial-text-box-2 {
+  position: relative;
+  min-width: 200px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding-inline: 16px;
+  padding-block: 12px;
+}
+
+.usage-tutorial-text-box-1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 16px;
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.usage-tutorial-text-box-2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+}
+
+.usage-tutorial-text-light-paragraph {
+  color: #333;
+}
+
+.usage-tutorial-arrow-right-with-background {
+  position: absolute;
+  width: 32px;
+  height: 52px;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.usage-tutorial-sleep-reminder-modal-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg); /* 先置中，再旋轉 */
+  z-index: 3;
+}
+
+.usage-tutorial-saved-moments-modal-position {
+  position: absolute;
+  min-width: 328px;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%) rotate(90deg); /* 先置中，再旋轉 */
+  z-index: 3;
+}
+
+.usage-tutorial-sleep-reminder-modal,
+.usage-tutorial-saved-moments-modal {
+  min-width: 328px;
+  padding-block: 24px;
+  padding-inline: 16px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(18, 18, 18, 0.1);
+}
+
+.usage-tutorial-night-mode-yellow,
+.usage-tutorial-green-circle-check {
+  width: 24px;
+  height: 24px;
+}
+
 @media (min-width: 768px) {
+  .usage-tutorial-width-height {
+    height: 100vh;
+  }
+
+  .usage-tutorial-overlay {
+    margin-inline: -56px;
+  }
+
   .fullscreen-img {
     transform: none; /* 不旋轉 */
     top: 0;
     left: 0;
-    width: 100vw;
+    width: calc(100vw - 112px);
     height: 100vh;
+  }
+
+  .usage-tutorial-title {
+    transform: none;
+    top: 12px;
+    left: 16px;
+    font-size: 24px;
+  }
+
+  .usage-tutorial-video-control-icon {
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .usage-tutorial-player-bar {
+    width: 100%;
+    height: auto;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: 30px;
+    left: 0;
+    transform: none;
+  }
+
+  .usage-tutorial-arrow-left {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 12px;
+    left: -24px;
+    transform: none;
+  }
+
+  .usage-tutorial-unlock,
+  .usage-tutorial-lock {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 12px;
+    right: -24px;
+    transform: none;
+  }
+
+  .usage-tutorial-arrow-right {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: -48px;
+    transform: translateY(-50%);
+  }
+
+  .usage-tutorial-dash-circle-with-green-triangle {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: auto;
+    bottom: 20px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-green-triangle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: auto;
+    bottom: 35px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-text-box-1-position {
+    position: absolute;
+    top: auto;
+    bottom: 110px;
+    left: 24%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-text-box-2-position {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+
+  .usage-tutorial-text-box-1 {
+    padding-inline: 24px;
+    padding-block: 16px;
+  }
+
+  .usage-tutorial-text-box-1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 24px;
+    transform: rotate(45deg);
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-bottom-right-radius: 5px;
+  }
+
+  .usage-tutorial-green-arrow-right {
+    width: 24px;
+    height: 24px;
+  }
+
+  .usage-tutorial-arrow-right-with-background {
+    position: absolute;
+    width: 32px;
+    height: 52px;
+    top: 50%;
+    left: auto;
+    transform: translateY(-50%);
+  }
+
+  .usage-tutorial-sleep-reminder-modal-position {
+    position: absolute;
+    min-width: 328px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .usage-tutorial-saved-moments-modal-position {
+    position: absolute;
+    min-width: 328px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+}
+
+@media (min-width: 1194px) {
+  .usage-tutorial-dash-circle-with-green-triangle {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: auto;
+    bottom: 32px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-text-box-1-position {
+    position: absolute;
+    top: auto;
+    bottom: 130px;
+    left: 24%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-green-triangle {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: auto;
+    bottom: 40px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
+  }
+}
+
+@media (min-width: 1450px) {
+  .usage-tutorial-dash-circle-with-green-triangle {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: auto;
+    bottom: 38px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-text-box-1-position {
+    position: absolute;
+    top: auto;
+    bottom: 150px;
+    left: 24%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-green-triangle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: auto;
+    bottom: 45px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
+  }
+}
+
+@media (min-width: 1650px) {
+  .usage-tutorial-dash-circle-with-green-triangle {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: auto;
+    bottom: 50px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-text-box-1-position {
+    position: absolute;
+    top: auto;
+    bottom: 170px;
+    left: 24%;
+    transform: none;
+    z-index: 3;
+  }
+
+  .usage-tutorial-green-triangle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: auto;
+    bottom: 50px;
+    left: 25%;
+    transform: none;
+    z-index: 3;
   }
 }
