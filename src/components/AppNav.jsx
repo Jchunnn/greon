@@ -73,8 +73,8 @@ function AppNav() {
 
   return (
     <nav>
-      <div className="container bg-neutral-900">
-        <div className="py-xxs px-m px-md-xl px-lg-3xl">
+      <div className="px-4 bg-neutral-900">
+        <div className="py-xxs px-m">
           <ul className="flex justify-between items-center">
             {navItems.map((item) => {
               const isActive = activeTab === item.to;

@@ -93,7 +93,7 @@ function AppHome() {
   return (
     <>
       <main className="mt-app-header pt-app-home bg-neutral-900">
-        <section className="relative overflow-hidden mb-m mb-lg-5xl app-home-section1-img-layout">
+        <section className="relative overflow-hidden mb-m app-home-section1-img-layout">
           <img
             src={heroSection1}
             alt="hero-section-1"
@@ -106,7 +106,7 @@ function AppHome() {
                   key={index}
                   backgroundColor="#12121266"
                   textColor="#F5F5F5"
-                  customClass="py-xs px-s flex items-center justify-center app-home-tag-border"
+                  customClass="py-xs px-s flex items-center justify-center app-home-tag app-home-tag-border"
                 >
                   <span className="text-l">{tag.tag}</span>
                   {tag.icon && (
@@ -141,8 +141,8 @@ function AppHome() {
             </Button>
           </div>
         </section>
-        <section className="mb-m mb-lg-5xl ml-m ml-lg-6xl">
-          <div className="flex justify-between mb-xs mb-lg-xl mr-10px mr-lg-2xl font-bold text-lg-h5">
+        <section className="mb-m ml-m">
+          <div className="flex justify-between mb-xs mr-10px font-bold text-lg-h5">
             <h2 className="text-neutral-0">台灣區前十點播</h2>
             <Button>
               <img
@@ -152,7 +152,7 @@ function AppHome() {
               />
             </Button>
           </div>
-          <ul className="flex gap-xs gap-lg-s overflow-x-auto scroll-container">
+          <ul className="flex gap-xs overflow-x-auto scroll-container">
             {top10FilmList.map((film) => (
               <li key={film.rank}>
                 <Button to="/film">
@@ -164,10 +164,11 @@ function AppHome() {
                 </Button>
               </li>
             ))}
+            <li className="pr-xs"></li>
           </ul>
         </section>
-        <section className="mb-m mb-lg-5xl ml-m ml-lg-6xl">
-          <div className="flex justify-between mb-xs mb-lg-xl mr-10px mr-lg-2xl font-bold text-lg-h5">
+        <section className="mb-m ml-m">
+          <div className="flex justify-between mb-xs mr-10px font-bold text-lg-h5">
             <h2 className="text-neutral-0">繼續觀看</h2>
             <Button>
               <img
@@ -177,7 +178,7 @@ function AppHome() {
               />
             </Button>
           </div>
-          <ul className="flex gap-xs gap-lg-s overflow-x-auto scroll-container">
+          <ul className="flex gap-xs overflow-x-auto scroll-container">
             {continueWatchList.map((watch) => (
               <li key={watch.alt}>
                 <div className="relative mb-xs">
@@ -202,10 +203,11 @@ function AppHome() {
                 </div>
               </li>
             ))}
+            <li className="pr-xs"></li>
           </ul>
         </section>
-        <section className="mb-m mb-lg-5xl ml-m ml-lg-6xl">
-          <div className="flex justify-between mb-xs mb-lg-xl mr-10px mr-lg-2xl font-bold text-lg-h5">
+        <section className="mb-m ml-m">
+          <div className="flex justify-between mb-xs mr-10px font-bold text-lg-h5">
             <h2 className="text-neutral-0">專屬推薦</h2>
             <Button>
               <img
@@ -215,7 +217,7 @@ function AppHome() {
               />
             </Button>
           </div>
-          <ul className="flex gap-xs gap-lg-s overflow-x-auto scroll-container">
+          <ul className="flex gap-xs overflow-x-auto scroll-container">
             {recommandList.map((recommand) => (
               <li key={recommand.alt}>
                 <div className="relative mb-xs">
@@ -242,11 +244,12 @@ function AppHome() {
                 </div>
               </li>
             ))}
+            <li className="pr-xs"></li>
           </ul>
         </section>
-        <section className="mb-m mb-lg-5xl">
-          <div className="ml-m ml-lg-6xl">
-            <div className="flex justify-between mb-xs mb-lg-xl mr-10px mr-lg-2xl font-bold text-lg-h5">
+        <section className="mb-m">
+          <div className="ml-m">
+            <div className="flex justify-between mb-xs mr-10px font-bold text-lg-h5">
               <h2 className="text-neutral-0">分類</h2>
               <Button>
                 <img
@@ -258,12 +261,12 @@ function AppHome() {
             </div>
           </div>
 
-          <div className="px-m px-lg-6xl">
+          <div className="px-m">
             <ul className="row">
               {categoryList.map((category) => (
                 <li
                   key={category.category}
-                  className="col-2 col-md-2 col-lg-3 mb-xs mb-lg-2xl"
+                  className="col-2 col-md-2 col-lg-3 mb-xs"
                 >
                   <Button to="/film" otherClass="w-full mb-xs">
                     <img src={category.img} alt={category.alt} />

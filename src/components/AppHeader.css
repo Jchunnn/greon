@@ -4,6 +4,11 @@
   z-index: 1;
 }
 
+.night-mode {
+  height: 24px;
+  width: 24px;
+}
+
 @media (min-width: 768px) {
   .logo-icon {
     height: 28px;
@@ -17,7 +22,8 @@
     height: 28px;
   }
 
-  .night-mode-white-icon {
+  .night-mode {
     height: 28px;
+    width: 28px;
   }
 }
